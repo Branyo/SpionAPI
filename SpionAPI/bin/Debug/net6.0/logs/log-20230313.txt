@@ -1,0 +1,205 @@
+2023-03-13 22:42:09.014 +01:00 [INF] Now listening on: http://localhost:5000
+2023-03-13 22:42:09.047 +01:00 [INF] Now listening on: https://localhost:5001
+2023-03-13 22:42:09.051 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-13 22:42:09.052 +01:00 [INF] Hosting environment: Production
+2023-03-13 22:42:09.053 +01:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\bin\Debug\net6.0\
+2023-03-13 22:43:25.384 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------703942975199446769274336 388
+2023-03-13 22:43:25.409 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:25.418 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:26.114 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:26.601 +01:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:26.711 +01:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:26.761 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:26.778 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 1352.7231ms
+2023-03-13 22:43:26.782 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:26.785 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 1379.6411 ms
+2023-03-13 22:43:26.792 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------703942975199446769274336 388 - 200 - application/json;+charset=utf-8 1411.1461ms
+2023-03-13 22:43:30.214 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------907577503099438898518234 388
+2023-03-13 22:43:30.216 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:30.218 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:30.222 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:30.227 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:30.232 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:30.235 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:30.236 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 15.7813ms
+2023-03-13 22:43:30.241 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:30.243 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 26.5662 ms
+2023-03-13 22:43:30.245 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------907577503099438898518234 388 - 200 - application/json;+charset=utf-8 30.9446ms
+2023-03-13 22:43:31.200 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------652657854872254655567256 388
+2023-03-13 22:43:31.203 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:31.204 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:31.251 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:31.255 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:31.259 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:31.262 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:31.263 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 56.5646ms
+2023-03-13 22:43:31.265 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:31.266 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 64.0100 ms
+2023-03-13 22:43:31.268 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------652657854872254655567256 388 - 200 - application/json;+charset=utf-8 67.6051ms
+2023-03-13 22:43:31.921 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------179026377260581216020581 388
+2023-03-13 22:43:31.924 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:31.926 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:31.928 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:31.930 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:31.932 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:31.936 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:31.937 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 9.0627ms
+2023-03-13 22:43:31.938 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:31.939 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 15.5748 ms
+2023-03-13 22:43:31.941 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------179026377260581216020581 388 - 200 - application/json;+charset=utf-8 20.1257ms
+2023-03-13 22:43:32.967 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------856496333492411226613820 388
+2023-03-13 22:43:32.970 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:32.971 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:32.974 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:32.978 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:32.980 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:32.983 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:32.984 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 10.6011ms
+2023-03-13 22:43:32.985 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:32.987 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 16.7804 ms
+2023-03-13 22:43:32.988 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------856496333492411226613820 388 - 200 - application/json;+charset=utf-8 20.5711ms
+2023-03-13 22:43:33.761 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------572154043361831007932687 388
+2023-03-13 22:43:33.763 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:33.765 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:33.768 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:33.771 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:33.777 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:33.781 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:33.782 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 14.6932ms
+2023-03-13 22:43:33.785 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:33.786 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 22.5242 ms
+2023-03-13 22:43:33.787 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------572154043361831007932687 388 - 200 - application/json;+charset=utf-8 26.1101ms
+2023-03-13 22:43:34.428 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------295604435363821483968552 388
+2023-03-13 22:43:34.430 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:34.432 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:34.434 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:34.437 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:34.440 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:34.446 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:34.447 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 13.4805ms
+2023-03-13 22:43:34.449 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:34.451 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 21.0278 ms
+2023-03-13 22:43:34.453 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------295604435363821483968552 388 - 200 - application/json;+charset=utf-8 24.4241ms
+2023-03-13 22:43:35.095 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------737823889411891501616402 388
+2023-03-13 22:43:35.097 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:35.098 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:35.100 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:35.103 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:35.105 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:35.110 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:35.112 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 12.0425ms
+2023-03-13 22:43:35.113 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:35.114 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 17.5116 ms
+2023-03-13 22:43:35.117 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------737823889411891501616402 388 - 200 - application/json;+charset=utf-8 21.7154ms
+2023-03-13 22:43:35.865 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------008870375104266919012542 388
+2023-03-13 22:43:35.867 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:35.868 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:35.870 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:35.872 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:35.874 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:35.878 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:35.879 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 9.9865ms
+2023-03-13 22:43:35.881 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:35.882 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 15.5407 ms
+2023-03-13 22:43:35.884 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------008870375104266919012542 388 - 200 - application/json;+charset=utf-8 18.2417ms
+2023-03-13 22:43:37.115 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------354211639065039717305338 388
+2023-03-13 22:43:37.117 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:37.118 +01:00 [INF] Route matched with {action = "GetRandomGameData", controller = "GamePlay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] GetRandomGameData() on controller SpionAPI.Controllers.GamePlayController (SpionAPI).
+2023-03-13 22:43:37.122 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-13 22:43:37.124 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [GuessData] AS [g]
+2023-03-13 22:43:37.129 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[CreateTime], [t].[CreatedByUserId], [t].[GuessedWord], [t].[LastGameUsageTime], [t].[RelatedWord], [t].[UpdateTime]
+FROM (
+    SELECT TOP(@__p_0) [g].[Id], [g].[CreateTime], [g].[CreatedByUserId], [g].[GuessedWord], [g].[LastGameUsageTime], [g].[RelatedWord], [g].[UpdateTime]
+    FROM [GuessData] AS [g]
+    ORDER BY [g].[LastGameUsageTime]
+) AS [t]
+ORDER BY [t].[LastGameUsageTime] DESC
+2023-03-13 22:43:37.132 +01:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GuessDataDto'.
+2023-03-13 22:43:37.133 +01:00 [INF] Executed action SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI) in 12.1108ms
+2023-03-13 22:43:37.135 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GamePlayController.GetRandomGameData (SpionAPI)'
+2023-03-13 22:43:37.136 +01:00 [INF] HTTP GET /api/GamePlay/ responded 200 in 19.5662 ms
+2023-03-13 22:43:37.138 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:5001/api/GamePlay/ multipart/form-data;+boundary=--------------------------354211639065039717305338 388 - 200 - application/json;+charset=utf-8 22.4104ms

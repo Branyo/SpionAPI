@@ -1,0 +1,79 @@
+2023-03-10 15:08:55.062 +01:00 [INF] Now listening on: https://localhost:7159
+2023-03-10 15:08:55.119 +01:00 [INF] Now listening on: http://localhost:5159
+2023-03-10 15:08:55.123 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-10 15:08:55.124 +01:00 [INF] Hosting environment: Development
+2023-03-10 15:08:55.124 +01:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\
+2023-03-10 15:08:57.339 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/index.html - -
+2023-03-10 15:08:57.785 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/index.html - - - 200 - text/html;charset=utf-8 463.1156ms
+2023-03-10 15:08:57.796 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_vs/browserLink - -
+2023-03-10 15:08:57.796 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - -
+2023-03-10 15:08:57.830 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 34.2673ms
+2023-03-10 15:08:57.879 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.3440ms
+2023-03-10 15:08:57.968 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - -
+2023-03-10 15:08:58.105 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.4044ms
+2023-03-10 15:10:47.353 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-10 15:10:57.188 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-10 15:13:02.234 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-10 15:13:03.100 +01:00 [INF] Executed DbCommand (287ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [SpionAPI];
+2023-03-10 15:13:03.179 +01:00 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [SpionAPI] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2023-03-10 15:13:03.197 +01:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-10 15:13:03.310 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2023-03-10 15:13:03.312 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-10 15:13:03.334 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-10 15:13:03.352 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-10 15:13:03.367 +01:00 [INF] Applying migration '20230310141057_initialMigration'.
+2023-03-10 15:13:03.405 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [GameStatistics] (
+    [Id] int NOT NULL IDENTITY,
+    [PlayerCount] int NOT NULL,
+    [GuessDataID] nvarchar(max) NOT NULL,
+    [UseRelatedWordAsAHint] bit NOT NULL,
+    [SpyPresent] bit NOT NULL,
+    [UndercoverPresent] bit NOT NULL,
+    [PantonimePresent] bit NOT NULL,
+    [SingerPresent] bit NOT NULL,
+    [SpyWon] bit NOT NULL,
+    [UndercoverWon] bit NOT NULL,
+    [GameStarted] datetime2 NOT NULL,
+    [GameCompleted] datetime2 NOT NULL,
+    CONSTRAINT [PK_GameStatistics] PRIMARY KEY ([Id])
+);
+2023-03-10 15:13:03.406 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Score] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2023-03-10 15:13:03.408 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [GuessData] (
+    [Id] int NOT NULL IDENTITY,
+    [GuessedWord] nvarchar(max) NOT NULL,
+    [RelatedWord] nvarchar(max) NOT NULL,
+    [CreateTime] datetime2 NOT NULL,
+    [UpdateTime] datetime2 NOT NULL,
+    [CreatedByUserId] int NOT NULL,
+    CONSTRAINT [PK_GuessData] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_GuessData_Users_CreatedByUserId] FOREIGN KEY ([CreatedByUserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2023-03-10 15:13:03.411 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_GuessData_CreatedByUserId] ON [GuessData] ([CreatedByUserId]);
+2023-03-10 15:13:03.418 +01:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230310141057_initialMigration', N'6.0.14');

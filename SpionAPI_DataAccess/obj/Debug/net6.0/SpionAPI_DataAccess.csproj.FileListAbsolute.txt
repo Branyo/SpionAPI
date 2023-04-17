@@ -1,0 +1,17 @@
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.deps.json
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.runtimeconfig.json
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.dll
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.pdb
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_Model.dll
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_Model.pdb
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.csproj.AssemblyReference.cache
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.AssemblyInfoInputs.cache
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.AssemblyInfo.cs
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.csproj.CoreCompileInputs.cache
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.csproj.CopyComplete
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.dll
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\refint\SpionAPI_DataAccess.dll
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.pdb
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.genruntimeconfig.cache
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\ref\SpionAPI_DataAccess.dll

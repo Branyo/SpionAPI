@@ -1,0 +1,142 @@
+2023-03-11 22:40:52.734 +01:00 [INF] Now listening on: https://localhost:7159
+2023-03-11 22:40:52.789 +01:00 [INF] Now listening on: http://localhost:5159
+2023-03-11 22:40:52.793 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-11 22:40:52.794 +01:00 [INF] Hosting environment: Development
+2023-03-11 22:40:52.795 +01:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\
+2023-03-11 22:40:54.277 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/index.html - -
+2023-03-11 22:40:54.994 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/index.html - - - 200 - text/html;charset=utf-8 721.3104ms
+2023-03-11 22:40:55.059 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - -
+2023-03-11 22:40:55.059 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_vs/browserLink - -
+2023-03-11 22:40:55.066 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 7.1789ms
+2023-03-11 22:40:55.405 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 346.0810ms
+2023-03-11 22:40:55.528 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - -
+2023-03-11 22:40:55.748 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.5261ms
+2023-03-11 22:41:24.234 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GuessEdit - -
+2023-03-11 22:41:24.256 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GuessEditController.GetAllGuessData (SpionAPI)'
+2023-03-11 22:41:24.266 +01:00 [INF] Route matched with {action = "GetAllGuessData", controller = "GuessEdit"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[SpionAPI.Models.GuessDataDto]] GetAllGuessData() on controller SpionAPI.Controllers.GuessEditController (SpionAPI).
+2023-03-11 22:41:24.605 +01:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[SpionAPI.Models.GuessData, SpionAPI_Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-11 22:41:25.620 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-11 22:41:26.670 +01:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[CreatedByUserId], [g].[CreateTime], [g].[GuessedWord], [g].[RelatedWord], [g].[UpdateTime]
+FROM [GuessData] AS [g]
+2023-03-11 22:41:26.738 +01:00 [INF] Executed action SpionAPI.Controllers.GuessEditController.GetAllGuessData (SpionAPI) in 2466.9232ms
+2023-03-11 22:41:26.742 +01:00 [INF] Executed endpoint 'SpionAPI.Controllers.GuessEditController.GetAllGuessData (SpionAPI)'
+2023-03-11 22:41:26.748 +01:00 [INF] HTTP GET /api/GuessEdit responded 200 in 2495.5635 ms
+2023-03-11 22:41:26.760 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GuessEdit - - - 200 - application/json;+charset=utf-8 2525.9837ms
+2023-03-11 22:42:04.143 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7159/api/GuessEdit application/json 68
+2023-03-11 22:42:04.174 +01:00 [INF] CORS policy execution successful.
+2023-03-11 22:42:04.176 +01:00 [INF] Executing endpoint 'SpionAPI.Controllers.GuessEditController.CreateGuessData (SpionAPI)'
+2023-03-11 22:42:04.189 +01:00 [INF] Route matched with {action = "CreateGuessData", controller = "GuessEdit"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GuessDataDto] CreateGuessData(SpionAPI.Models.GuessDataDto) on controller SpionAPI.Controllers.GuessEditController (SpionAPI).
+2023-03-11 22:42:04.250 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-11 22:42:04.618 +01:00 [INF] Executed DbCommand (56ms) [Parameters=[@__ToLower_0='?' (Size = 4000), @__ToLower_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[CreatedByUserId], [g].[CreateTime], [g].[GuessedWord], [g].[RelatedWord], [g].[UpdateTime]
+FROM [GuessData] AS [g]
+WHERE (LOWER([g].[GuessedWord]) = @__ToLower_0) AND (LOWER([g].[RelatedWord]) = @__ToLower_1)
+2023-03-11 22:42:04.897 +01:00 [ERR] Failed executing DbCommand (23ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [GuessData] ([CreatedByUserId], [CreateTime], [GuessedWord], [RelatedWord], [UpdateTime])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [GuessData]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-03-11 22:42:04.966 +01:00 [ERR] An exception occurred in the database while saving changes for context type 'SpionAPI_DataAccess.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_GuessData_Users_CreatedByUserId". The conflict occurred in database "SpionAPI", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7f23ec8e-8253-40fd-9bd5-b3f81ec3819c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_GuessData_Users_CreatedByUserId". The conflict occurred in database "SpionAPI", table "dbo.Users", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at Microsoft.Data.SqlClient.SqlDataReader.get_MetaData()
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+ClientConnectionId:7f23ec8e-8253-40fd-9bd5-b3f81ec3819c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+2023-03-11 23:28:42.021 +01:00 [INF] Now listening on: https://localhost:7159
+2023-03-11 23:28:42.094 +01:00 [INF] Now listening on: http://localhost:5159
+2023-03-11 23:28:42.097 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-11 23:28:42.099 +01:00 [INF] Hosting environment: Development
+2023-03-11 23:28:42.099 +01:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\
+2023-03-11 23:28:43.014 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/index.html - -
+2023-03-11 23:28:43.378 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/index.html - - - 200 - text/html;charset=utf-8 367.1789ms
+2023-03-11 23:28:43.390 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - -
+2023-03-11 23:28:43.396 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_vs/browserLink - -
+2023-03-11 23:28:43.409 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 19.1640ms
+2023-03-11 23:28:43.452 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.6604ms
+2023-03-11 23:28:43.504 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - -
+2023-03-11 23:28:53.174 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-11 23:29:20.460 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-11 23:29:20.978 +01:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-11 23:29:21.005 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-11 23:29:21.008 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-11 23:29:21.009 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-11 23:29:21.044 +01:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-11 23:29:21.058 +01:00 [INF] Applying migration '20230311222853_AddLastUsageAttributeToGuessData'.
+2023-03-11 23:29:21.143 +01:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [GuessData] ADD [LastUsage] datetime2 NOT NULL DEFAULT '0001-01-01T00:00:00.0000000';
+2023-03-11 23:29:21.145 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230311222853_AddLastUsageAttributeToGuessData', N'6.0.14');
+2023-03-11 23:35:49.809 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-11 23:35:56.543 +01:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-03-11 23:35:56.830 +01:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-11 23:35:56.857 +01:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-11 23:35:56.860 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2023-03-11 23:35:56.861 +01:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2023-03-11 23:35:56.880 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2023-03-11 23:35:56.894 +01:00 [INF] Applying migration '20230311223549_RenameLastUsageToLastGameUsage'.
+2023-03-11 23:35:57.143 +01:00 [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[GuessData].[LastUsage]', N'LastGameUsage', N'COLUMN';
+2023-03-11 23:35:57.144 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230311223549_RenameLastUsageToLastGameUsage', N'6.0.14');
