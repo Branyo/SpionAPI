@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using SpionAPI.Interfaces;
+using SpionAPI.Repositories;
 using SpionAPI_DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 String connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer(connectionString);
+    options.UseSqlServer(connectionString)
+    .LogTo(Console.WriteLine, LogLevel.Information);
 });
 
 
@@ -33,6 +36,11 @@ builder.Services.AddCors(options =>
 
 //Add logging here
 builder.Host.UseSerilog((context,logConf) => logConf.WriteTo.Console().ReadFrom.Configuration(context.Configuration) );
+
+//add/register my own sevices here:
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IGuessDataRepository, GuessDataRepository>();
+
 
 
 var app = builder.Build();

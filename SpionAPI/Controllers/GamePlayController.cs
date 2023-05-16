@@ -33,8 +33,11 @@ namespace SpionAPI.Controllers
             //GuessData gData = _dbContext.GuessData.FirstOrDefault(x => x.Id == randomId);
             //GuessData gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsage).Take(wordCountHalved).FirstOrDefault(x => x.Id == randomId);
             //GuessData gData = _dbContext.GuessData.OrderByDescending(x => x.LastGameUsage).Skip(wordCountHalved + randomId).Take(1).SingleOrDefault(x => x.Id == randomId);
-            GuessData gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsageTime).Take(randomId).LastOrDefault(); //  Skip(wordCountHalved + ).Take(1).SingleOrDefault(x => x.Id == randomId);
+            //GuessData gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsageTime).Take(randomId).LastOrDefault(); //  Skip(wordCountHalved + ).Take(1).SingleOrDefault(x => x.Id == randomId);
+            var gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsageTime).Take(randomId).LastOrDefault(); //  Skip(wordCountHalved + ).Take(1).SingleOrDefault(x => x.Id == randomId);
+
             
+
             if (gData == null)
             {
                 return NotFound();
@@ -51,7 +54,7 @@ namespace SpionAPI.Controllers
         }
 
         /// <summary>
-        /// Update last game usage date = NOW in GuessData entity
+        /// Update last game usage date = NOW in GuessData entity to prevent repeating recent words
         /// </summary>
         /// <param name="id">GuessData id parameter</param>
         /// <returns></returns>
