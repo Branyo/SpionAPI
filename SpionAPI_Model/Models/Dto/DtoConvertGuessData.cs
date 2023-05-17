@@ -1,6 +1,6 @@
 ﻿namespace SpionAPI.Models.Dto
 {
-    public static class DtoConvert
+    public static class DtoConvertGuessData
     {
         public static GuessDataDto ToGuessDataDto(GuessData guessData)
         {

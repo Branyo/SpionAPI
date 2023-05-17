@@ -30,7 +30,7 @@ namespace SpionAPI.Controllers
 
             foreach (GuessData dRow in data)
             {
-                result.Add(DtoConvert.ToGuessDataDto(dRow));
+                result.Add(DtoConvertGuessData.ToGuessDataDto(dRow));
             }
 
             return Ok(result);                                
@@ -55,7 +55,7 @@ namespace SpionAPI.Controllers
                 return NotFound();
             }
 
-            GuessDataDto gDataDto = DtoConvert.ToGuessDataDto(gData);
+            GuessDataDto gDataDto = DtoConvertGuessData.ToGuessDataDto(gData);
             return Ok(gData);
 
         }
@@ -98,7 +98,7 @@ namespace SpionAPI.Controllers
             }
 
             //Add entity to the DB
-            var gDataIn = DtoConvert.ToGuessData(guessDto);
+            var gDataIn = DtoConvertGuessData.ToGuessData(guessDto);
             
             gDataIn.Id = 0;                                 //prevent bad ID input
             ///TODO - Replace with user auth logic!!!!
@@ -148,7 +148,7 @@ namespace SpionAPI.Controllers
             };
 
 
-            var gD = DtoConvert.ToGuessData(guessDto);
+            var gD = DtoConvertGuessData.ToGuessData(guessDto);
             gD.UpdateTime = DateTime.Now;                   //update date of the change
                         
             await _guessDataRepository.UpdateAsync(gD);            

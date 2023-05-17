@@ -1,0 +1,120 @@
+2023-05-17 20:06:02.553 +02:00 [INF] Now listening on: https://localhost:7159
+2023-05-17 20:06:02.611 +02:00 [INF] Now listening on: http://localhost:5159
+2023-05-17 20:06:02.615 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-17 20:06:02.616 +02:00 [INF] Hosting environment: Development
+2023-05-17 20:06:02.616 +02:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\
+2023-05-17 20:06:05.958 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/index.html - -
+2023-05-17 20:06:06.368 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - -
+2023-05-17 20:06:06.368 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_vs/browserLink - -
+2023-05-17 20:06:06.376 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/index.html - - - 200 - text/html;charset=utf-8 417.5228ms
+2023-05-17 20:06:06.383 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 14.7496ms
+2023-05-17 20:06:06.473 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 104.4894ms
+2023-05-17 20:06:06.521 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - -
+2023-05-17 20:06:06.720 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 199.0901ms
+2023-05-17 20:06:52.511 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GameStats/123 - -
+2023-05-17 20:06:52.534 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:06:52.566 +02:00 [INF] Route matched with {action = "GetGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatisticsDto]] GetGameStatistics(Int32) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:06:54.213 +02:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-05-17 20:06:55.447 +02:00 [INF] Executed DbCommand (89ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[GameCompleted], [g].[GameStarted], [g].[GuessDataID], [g].[PantonimePresent], [g].[PlayerCount], [g].[SingerPresent], [g].[SpyPresent], [g].[SpyWon], [g].[UndercoverPresent], [g].[UndercoverWon], [g].[UseRelatedWordAsAHint]
+FROM [GameStatistics] AS [g]
+WHERE [g].[Id] = @__p_0
+2023-05-17 20:06:55.517 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-05-17 20:06:55.527 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI) in 2955.0117ms
+2023-05-17 20:06:55.532 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:06:55.537 +02:00 [INF] HTTP GET /api/GameStats/123 responded 404 in 3007.7230 ms
+2023-05-17 20:06:55.549 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GameStats/123 - - - 404 - application/problem+json;+charset=utf-8 3038.6295ms
+2023-05-17 20:07:49.462 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GameStats/0 - -
+2023-05-17 20:07:49.476 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:07:49.478 +02:00 [INF] Route matched with {action = "GetGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatisticsDto]] GetGameStatistics(Int32) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:07:49.480 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-05-17 20:07:49.482 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI) in 2.1885ms
+2023-05-17 20:07:49.482 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:07:49.483 +02:00 [INF] HTTP GET /api/GameStats/0 responded 400 in 6.8414 ms
+2023-05-17 20:07:49.491 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GameStats/0 - - - 400 - application/problem+json;+charset=utf-8 29.1629ms
+2023-05-17 20:14:00.844 +02:00 [INF] Now listening on: https://localhost:7159
+2023-05-17 20:14:00.891 +02:00 [INF] Now listening on: http://localhost:5159
+2023-05-17 20:14:00.897 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-17 20:14:00.897 +02:00 [INF] Hosting environment: Development
+2023-05-17 20:14:00.898 +02:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\
+2023-05-17 20:14:01.405 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/index.html - -
+2023-05-17 20:14:01.739 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - -
+2023-05-17 20:14:01.747 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_vs/browserLink - -
+2023-05-17 20:14:01.748 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/index.html - - - 200 - text/html;charset=utf-8 351.0474ms
+2023-05-17 20:14:01.748 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 8.3717ms
+2023-05-17 20:14:01.815 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 68.1774ms
+2023-05-17 20:14:01.876 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - -
+2023-05-17 20:14:02.065 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 189.9024ms
+2023-05-17 20:16:40.694 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7159/api/GameStats application/json 320
+2023-05-17 20:16:40.711 +02:00 [INF] CORS policy execution successful.
+2023-05-17 20:16:40.721 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.CreateGameStatistics (SpionAPI)'
+2023-05-17 20:16:40.748 +02:00 [INF] Route matched with {action = "CreateGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatistics]] CreateGameStatistics(SpionAPI.Models.GameStatisticsDto) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:16:40.976 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.SerializableError'.
+2023-05-17 20:16:40.987 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.CreateGameStatistics (SpionAPI) in 233.0359ms
+2023-05-17 20:16:40.994 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.CreateGameStatistics (SpionAPI)'
+2023-05-17 20:16:40.999 +02:00 [INF] HTTP POST /api/GameStats responded 400 in 288.5474 ms
+2023-05-17 20:16:41.004 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7159/api/GameStats application/json 320 - 400 - application/json;+charset=utf-8 310.3099ms
+2023-05-17 20:17:15.920 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7159/api/GameStats application/json 319
+2023-05-17 20:17:15.934 +02:00 [INF] CORS policy execution successful.
+2023-05-17 20:17:15.936 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.CreateGameStatistics (SpionAPI)'
+2023-05-17 20:17:15.938 +02:00 [INF] Route matched with {action = "CreateGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatistics]] CreateGameStatistics(SpionAPI.Models.GameStatisticsDto) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:17:16.835 +02:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-05-17 20:17:17.687 +02:00 [INF] Executed DbCommand (96ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Boolean), @p4='?' (DbType = Int32), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = Boolean), @p9='?' (DbType = Boolean), @p10='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [GameStatistics] ([GameCompleted], [GameStarted], [GuessDataID], [PantonimePresent], [PlayerCount], [SingerPresent], [SpyPresent], [SpyWon], [UndercoverPresent], [UndercoverWon], [UseRelatedWordAsAHint])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [GameStatistics]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2023-05-17 20:17:17.844 +02:00 [INF] Executing CreatedAtRouteResult, writing value of type 'SpionAPI.Models.GameStatisticsDto'.
+2023-05-17 20:17:17.877 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.CreateGameStatistics (SpionAPI) in 1935.5183ms
+2023-05-17 20:17:17.883 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.CreateGameStatistics (SpionAPI)'
+2023-05-17 20:17:17.887 +02:00 [INF] HTTP POST /api/GameStats responded 201 in 1953.1310 ms
+2023-05-17 20:17:17.894 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7159/api/GameStats application/json 319 - 201 - application/json;+charset=utf-8 1974.8588ms
+2023-05-17 20:18:26.013 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GameStats/3 - -
+2023-05-17 20:18:26.017 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:26.022 +02:00 [INF] Route matched with {action = "GetGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatisticsDto]] GetGameStatistics(Int32) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:18:26.076 +02:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-05-17 20:18:26.567 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[GameCompleted], [g].[GameStarted], [g].[GuessDataID], [g].[PantonimePresent], [g].[PlayerCount], [g].[SingerPresent], [g].[SpyPresent], [g].[SpyWon], [g].[UndercoverPresent], [g].[UndercoverWon], [g].[UseRelatedWordAsAHint]
+FROM [GameStatistics] AS [g]
+WHERE [g].[Id] = @__p_0
+2023-05-17 20:18:26.586 +02:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GameStatisticsDto'.
+2023-05-17 20:18:26.589 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI) in 564.2299ms
+2023-05-17 20:18:26.594 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:26.595 +02:00 [INF] HTTP GET /api/GameStats/3 responded 200 in 578.3410 ms
+2023-05-17 20:18:26.597 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GameStats/3 - - - 200 - application/json;+charset=utf-8 583.2806ms
+2023-05-17 20:18:46.243 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GameStats/0 - -
+2023-05-17 20:18:46.247 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:46.248 +02:00 [INF] Route matched with {action = "GetGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatisticsDto]] GetGameStatistics(Int32) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:18:46.251 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2023-05-17 20:18:46.253 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI) in 3.7451ms
+2023-05-17 20:18:46.257 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:46.258 +02:00 [INF] HTTP GET /api/GameStats/0 responded 400 in 10.6037 ms
+2023-05-17 20:18:46.259 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GameStats/0 - - - 400 - application/problem+json;+charset=utf-8 15.4846ms
+2023-05-17 20:18:54.766 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GameStats/1 - -
+2023-05-17 20:18:54.768 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:54.770 +02:00 [INF] Route matched with {action = "GetGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatisticsDto]] GetGameStatistics(Int32) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:18:54.782 +02:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-05-17 20:18:54.796 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[GameCompleted], [g].[GameStarted], [g].[GuessDataID], [g].[PantonimePresent], [g].[PlayerCount], [g].[SingerPresent], [g].[SpyPresent], [g].[SpyWon], [g].[UndercoverPresent], [g].[UndercoverWon], [g].[UseRelatedWordAsAHint]
+FROM [GameStatistics] AS [g]
+WHERE [g].[Id] = @__p_0
+2023-05-17 20:18:54.800 +02:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GameStatisticsDto'.
+2023-05-17 20:18:54.800 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI) in 27.3865ms
+2023-05-17 20:18:54.802 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:54.804 +02:00 [INF] HTTP GET /api/GameStats/1 responded 200 in 35.6654 ms
+2023-05-17 20:18:54.806 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GameStats/1 - - - 200 - application/json;+charset=utf-8 39.1734ms
+2023-05-17 20:18:58.912 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/api/GameStats/2 - -
+2023-05-17 20:18:58.924 +02:00 [INF] Executing endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:58.925 +02:00 [INF] Route matched with {action = "GetGameStatistics", controller = "GameStats"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[SpionAPI.Models.GameStatisticsDto]] GetGameStatistics(Int32) on controller SpionAPI.Controllers.GameStatsController (SpionAPI).
+2023-05-17 20:18:58.930 +02:00 [INF] Entity Framework Core 6.0.14 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.14' with options: None
+2023-05-17 20:18:58.936 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[GameCompleted], [g].[GameStarted], [g].[GuessDataID], [g].[PantonimePresent], [g].[PlayerCount], [g].[SingerPresent], [g].[SpyPresent], [g].[SpyWon], [g].[UndercoverPresent], [g].[UndercoverWon], [g].[UseRelatedWordAsAHint]
+FROM [GameStatistics] AS [g]
+WHERE [g].[Id] = @__p_0
+2023-05-17 20:18:58.939 +02:00 [INF] Executing OkObjectResult, writing value of type 'SpionAPI.Models.GameStatisticsDto'.
+2023-05-17 20:18:58.940 +02:00 [INF] Executed action SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI) in 10.8518ms
+2023-05-17 20:18:58.941 +02:00 [INF] Executed endpoint 'SpionAPI.Controllers.GameStatsController.GetGameStatistics (SpionAPI)'
+2023-05-17 20:18:58.942 +02:00 [INF] HTTP GET /api/GameStats/2 responded 200 in 17.7637 ms
+2023-05-17 20:18:58.943 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/api/GameStats/2 - - - 200 - application/json;+charset=utf-8 31.0336ms

@@ -43,7 +43,7 @@ namespace SpionAPI.Controllers
                 return NotFound();
             }  
             
-            GuessDataDto gDataDto = DtoConvert.ToGuessDataDto( gData );
+            GuessDataDto gDataDto = DtoConvertGuessData.ToGuessDataDto( gData );
 
             ////update last game usage date
             //gData.LastGameUsage = DateTime.Now;

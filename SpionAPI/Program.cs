@@ -40,6 +40,7 @@ builder.Host.UseSerilog((context,logConf) => logConf.WriteTo.Console().ReadFrom.
 //add/register my own sevices here:
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IGuessDataRepository, GuessDataRepository>();
+builder.Services.AddScoped<IGameStatsRepository, GameStatsRepository>();
 
 
 

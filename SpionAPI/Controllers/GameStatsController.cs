@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SpionAPI.Interfaces;
 using SpionAPI.Models;
+using SpionAPI.Models.Dto;
 using SpionAPI_DataAccess.Data;
 
 namespace SpionAPI.Controllers
@@ -10,40 +12,40 @@ namespace SpionAPI.Controllers
     [ApiController]
     public class GameStatsController : ControllerBase
     {
+        
+        private readonly IGameStatsRepository _gameStatsRepository;
 
-        AppDbContext _dbContext;
-
-        public GameStatsController(AppDbContext dbContext)
+        public GameStatsController(IGameStatsRepository gameStatsRepository)
         {
-            _dbContext = dbContext;
+            this._gameStatsRepository = gameStatsRepository;
         }
 
 
-        [HttpPost(Name = "InsertGameStatistics")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpPost(Name = "CreateGameStatistics")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<GameStatistics> InsertGameStatistics([FromBody] GameStatistics gameStats)
+        public async Task<ActionResult<GameStatistics>> CreateGameStatistics([FromBody] GameStatisticsDto gameStatsDto)
         {
 
             //Bad incomming data         
             if (
-                gameStats == null ||
-                gameStats.GameStarted.ToUniversalTime() > gameStats.GameCompleted.ToUniversalTime() ||
-                gameStats.GameCompleted.ToUniversalTime() > DateTime.Now.ToUniversalTime() ||
-                (!gameStats.UndercoverPresent && !gameStats.SpyPresent) ||
-                (gameStats.SpyWon && !gameStats.SpyPresent) ||
-                (gameStats.UndercoverWon && !gameStats.UndercoverPresent)
+                gameStatsDto == null ||
+                gameStatsDto.GameStarted.ToUniversalTime() > gameStatsDto.GameCompleted.ToUniversalTime() ||
+                gameStatsDto.GameCompleted.ToUniversalTime() > DateTime.Now.ToUniversalTime() ||
+                (!gameStatsDto.UndercoverPresent && !gameStatsDto.SpyPresent) ||
+                (gameStatsDto.SpyWon && !gameStatsDto.SpyPresent) ||
+                (gameStatsDto.UndercoverWon && !gameStatsDto.UndercoverPresent)
             )
             {
                 ModelState.AddModelError("Error", "Bad game statistics data!");
-                return BadRequest(ModelState);
+                return  BadRequest(ModelState);
             }
 
-            _dbContext.GameStatistics.Add(gameStats);
-            _dbContext.SaveChanges();
-
-            return CreatedAtRoute("GetGameStatistics", gameStats.Id, gameStats);
+            var gameStats = DtoConvertGameStatistic.ToGuessData(gameStatsDto);
+            await _gameStatsRepository.AddAsync( gameStats );
+            
+            return CreatedAtRoute("GetGameStatistics", new { id = gameStats.Id }, gameStatsDto);
 
         }
 
@@ -51,7 +53,8 @@ namespace SpionAPI.Controllers
         [HttpGet("{id:int}", Name = "GetGameStatistics")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<GameStatistics> GetGameStatistics(int id)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<GameStatisticsDto>> GetGameStatistics(int id)
         {
 
             if (id == 0)
@@ -59,14 +62,15 @@ namespace SpionAPI.Controllers
                 return BadRequest();
             }
 
-            GameStatistics gameStats = _dbContext.GameStatistics.FirstOrDefault(x => x.Id == id);
+            GameStatistics gameStats = await _gameStatsRepository.GetAsync(id);
+            GameStatisticsDto gameStatsDto = DtoConvertGameStatistic.ToGuessDataDto(gameStats);
 
-            if (gameStats == null)
+            if (gameStatsDto == null)
             {
                 return NotFound();
             }
 
-            return Ok(gameStats);
+            return Ok(gameStatsDto);
 
         }
 
