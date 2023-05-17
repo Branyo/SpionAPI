@@ -13,7 +13,6 @@ namespace SpionAPI.Repositories
 
         public async Task<bool> CheckGuessDuplicity(string GuessedWord, string RelatedWord)
         {
-
             return await _context.Set<GuessData>().FirstOrDefaultAsync(x => (
                 x.GuessedWord.ToLower() == GuessedWord.ToLower() &&
                 x.RelatedWord.ToLower() == RelatedWord.ToLower())) != null;

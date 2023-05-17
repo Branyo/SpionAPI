@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SpionAPI.Interfaces;
 using SpionAPI.Models;
 using SpionAPI.Models.Dto;
 using SpionAPI_DataAccess.Data;
@@ -10,33 +11,22 @@ namespace SpionAPI.Controllers
     [Route("api/GamePlay")]
     [ApiController]
     public class GamePlayController : ControllerBase
-    {       
+    {
+        private readonly IGamePlayRepository _gamePlayRepository;
 
-        AppDbContext _dbContext;
-
-        public GamePlayController(AppDbContext dbContext)
+        public GamePlayController(IGamePlayRepository gamePlayRepository)
         {
-            _dbContext = dbContext;
+            this._gamePlayRepository = gamePlayRepository;
         }
-
-
+               
 
         [HttpGet(Name = "GetRandomGameData")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<GuessDataDto> GetRandomGameData()
+        public async Task<ActionResult<GuessDataDto>> GetRandomGameData()
         {
-            int wordCountHalved = _dbContext.GuessData.Count() / 2;
 
-            int randomId = new Random(DateTime.Now.Second * 1000 + DateTime.Now.Millisecond).Next(0, wordCountHalved ) + 1;
-
-            //GuessData gData = _dbContext.GuessData.FirstOrDefault(x => x.Id == randomId);
-            //GuessData gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsage).Take(wordCountHalved).FirstOrDefault(x => x.Id == randomId);
-            //GuessData gData = _dbContext.GuessData.OrderByDescending(x => x.LastGameUsage).Skip(wordCountHalved + randomId).Take(1).SingleOrDefault(x => x.Id == randomId);
-            //GuessData gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsageTime).Take(randomId).LastOrDefault(); //  Skip(wordCountHalved + ).Take(1).SingleOrDefault(x => x.Id == randomId);
-            var gData = _dbContext.GuessData.OrderBy(x => x.LastGameUsageTime).Take(randomId).LastOrDefault(); //  Skip(wordCountHalved + ).Take(1).SingleOrDefault(x => x.Id == randomId);
-
-            
+            GuessData gData = await _gamePlayRepository.GetRandomRecord();            
 
             if (gData == null)
             {
@@ -44,11 +34,6 @@ namespace SpionAPI.Controllers
             }  
             
             GuessDataDto gDataDto = DtoConvertGuessData.ToGuessDataDto( gData );
-
-            ////update last game usage date
-            //gData.LastGameUsage = DateTime.Now;
-            //_dbContext.GuessData.Update(gData);
-            //_dbContext.SaveChanges();
 
             return Ok(gDataDto);
         }
@@ -63,14 +48,14 @@ namespace SpionAPI.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult UpdateLastGameUsageDate(int id)
+        public async Task<IActionResult> UpdateLastGameUsageDate(int id)
         {
             if (id == 0)
             {
                 return BadRequest();
             }
 
-            GuessData gData = _dbContext.GuessData.FirstOrDefault(x => x.Id == id);
+            GuessData gData = await _gamePlayRepository.GetAsync(id);
 
             if (gData == null)
             {
@@ -78,8 +63,8 @@ namespace SpionAPI.Controllers
             }
             
             gData.LastGameUsageTime = DateTime.Now;
-            _dbContext.GuessData.Update(gData);
-            _dbContext.SaveChanges();
+            
+            await _gamePlayRepository.UpdateAsync(gData);
 
             return NoContent();
 
