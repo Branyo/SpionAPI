@@ -19,7 +19,7 @@
                 UndercoverWon = gameStats.UndercoverWon,
                 GameCompleted = gameStats.GameCompleted,
                 GameStarted = gameStats.GameStarted,
-                
+
 
             };
 
@@ -46,8 +46,6 @@
             };
 
         }
-
-
 
     }
 }

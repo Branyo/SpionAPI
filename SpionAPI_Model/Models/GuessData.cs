@@ -25,7 +25,7 @@ namespace SpionAPI.Models
         [ForeignKey(nameof(CreatedByUserId))]
         public int CreatedByUserId { get; set; }
 
-        public User CreatedByUser { get; set; }
+        public SpionUser CreatedByUser { get; set; }
 
 
 

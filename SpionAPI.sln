@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpionAPI", "SpionAPI\SpionAPI.csproj", "{65B9DC85-6A8B-4164-84A3-21C8D85BFB17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpionAPI", "SpionAPI\SpionAPI.csproj", "{65B9DC85-6A8B-4164-84A3-21C8D85BFB17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpionAPI_DataAccess", "SpionAPI_DataAccess\SpionAPI_DataAccess.csproj", "{AF977566-95C3-43C5-9D2C-DF018DBE7FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpionAPI_DataAccess", "SpionAPI_DataAccess\SpionAPI_DataAccess.csproj", "{AF977566-95C3-43C5-9D2C-DF018DBE7FF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpionAPI_Model", "SpionAPI_Model\SpionAPI_Model.csproj", "{E66DAC04-52FE-4E30-98B5-D00793E1E75B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpionAPI_Model", "SpionAPI_Model\SpionAPI_Model.csproj", "{E66DAC04-52FE-4E30-98B5-D00793E1E75B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,28 @@
+2023-06-23 22:59:17.796 +02:00 [INF] Now listening on: https://localhost:7159
+2023-06-23 22:59:17.857 +02:00 [INF] Now listening on: http://localhost:5159
+2023-06-23 22:59:17.868 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-23 22:59:17.870 +02:00 [INF] Hosting environment: Development
+2023-06-23 22:59:17.874 +02:00 [INF] Content root path: F:\Documents\GitHub\SpionAPI\SpionAPI\
+2023-06-23 22:59:19.298 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger - -
+2023-06-23 22:59:19.570 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger - - - 301 0 - 277.5369ms
+2023-06-23 22:59:19.574 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/index.html - -
+2023-06-23 22:59:20.457 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/swagger-ui.css - -
+2023-06-23 22:59:20.457 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/swagger-ui-bundle.js - -
+2023-06-23 22:59:20.457 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/swagger-ui-standalone-preset.js - -
+2023-06-23 22:59:20.457 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - -
+2023-06-23 22:59:20.459 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/index.html - - - 200 - text/html;charset=utf-8 884.8614ms
+2023-06-23 22:59:20.472 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_framework/aspnetcore-browser-refresh.js - - - 200 11986 application/javascript;+charset=utf-8 14.3512ms
+2023-06-23 22:59:20.477 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/_vs/browserLink - -
+2023-06-23 22:59:20.535 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-06-23 22:59:20.535 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-06-23 22:59:20.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 86.2093ms
+2023-06-23 22:59:20.554 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/swagger-ui.css - - - 200 144929 text/css 96.7169ms
+2023-06-23 22:59:20.568 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-06-23 22:59:20.576 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 118.8703ms
+2023-06-23 22:59:20.582 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 105.4861ms
+2023-06-23 22:59:20.799 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - -
+2023-06-23 22:59:20.842 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7159/swagger/favicon-32x32.png - -
+2023-06-23 22:59:20.850 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-06-23 22:59:20.861 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/favicon-32x32.png - - - 200 628 image/png 19.4309ms
+2023-06-23 22:59:21.008 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7159/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 208.3872ms
+2023-06-23 23:17:19.196 +02:00 [WRN] The foreign key property 'GuessData.CreatedByUserId1' was created in shadow state because a conflicting property with the simple name 'CreatedByUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.

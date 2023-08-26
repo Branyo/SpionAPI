@@ -1,5 +1,4 @@
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.deps.json
-F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.runtimeconfig.json
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.dll
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.pdb
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_Model.dll
@@ -13,5 +12,6 @@ F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataA
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.dll
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\refint\SpionAPI_DataAccess.dll
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.pdb
-F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.genruntimeconfig.cache
 F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\ref\SpionAPI_DataAccess.dll
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\bin\Debug\net6.0\SpionAPI_DataAccess.runtimeconfig.json
+F:\Documents\GitHub\SpionAPI\SpionAPI_DataAccess\obj\Debug\net6.0\SpionAPI_DataAccess.genruntimeconfig.cache

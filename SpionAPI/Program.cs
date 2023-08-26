@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using SpionAPI.Interfaces;
+using SpionAPI.Models;
 using SpionAPI.Repositories;
 using SpionAPI_DataAccess.Data;
+using SpionAPI_Model.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     .LogTo(Console.WriteLine, LogLevel.Information);
 });
 
+//authetication stuff initialization here:
+builder.Services.AddIdentityCore<SpionUser>()
+    .AddRoles<IdentityRole>()    
+    .AddEntityFrameworkStores<AppDbContext>();
 
 
 builder.Services.AddControllers();
